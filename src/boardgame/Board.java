@@ -12,6 +12,8 @@ public class Board {
 			this.columns = columns;
 			piaces = new Piace [rows][columns];
 			
+			
+			
 		}
 
 
@@ -35,7 +37,12 @@ public class Board {
 		}
 		
 		
+		public Piace piace(int row, int colum){
+			return piaces [row][colum];
+		}
 		
-		
+		public Piace piace(Position position){
+			return piaces [position.getRow()][position.getColumn()];
+		}
 
 }
