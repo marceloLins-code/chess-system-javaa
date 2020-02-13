@@ -53,6 +53,24 @@ public class Board {
 			piece.position   = position; // !null					  // RECEBE PEÇA
 		}
 		
+		//--------------------------------------------------------------------------------
+		
+		public Piace removePiace(Position position){
+			if (!positionExists(position)) {
+				throw new BoardException("Piece p pos: Position not on the board");
+			}
+			if (piace(position) == null) {
+				return null;
+			}
+			Piace aux = piace(position);
+			aux.position = null;
+			piaces[position.getRow()][position.getColumn()]=null;
+			return aux;
+					
+		}
+		
+		//--------------------------------------------------------------------------------
+		
 		// Quando uma posição numa dada linha e coluna existe?
 	      // qunado esta posição existe no tabuleiro
 		public boolean positionExists(int row, int column){
@@ -71,5 +89,6 @@ public class Board {
 			return piace(position) !=null;
 			
 		}
+		 
 
 }
