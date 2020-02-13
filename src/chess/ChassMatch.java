@@ -5,8 +5,9 @@ package chess;
 import chess.Piaces.King;
 import chess.Piaces.Rook;
 import boardgame.Board;
-import boardgame.Piace;
-import boardgame.Position;
+//import boardgame.Piace;
+//import boardgame.Position;
+
 
 public class ChassMatch {	
 	private Board board;
@@ -15,6 +16,7 @@ public class ChassMatch {
 		board = new Board(8, 8); // SETA O METODO A BAIXO PELO CONSTRUTOR EM BOARD								   
 		initialSetup();		
 	}
+	
 	//RETORNA O STATUS DA MATRIZ DE PEÇAS CORREPONDENTE A PARTIDA. ALOCA
 	public ChessPiace[][] getPiaces(){
 		ChessPiace[][] mat = new ChessPiace[board.getRows()][board.getColumns()];
@@ -36,11 +38,21 @@ public class ChassMatch {
 	
 	
 	private void initialSetup(){ // ALOCA A PEÇA NO TABULEIRO
-		placeNewPlace('b',6,new Rook(board, Color.WHITE));
-		placeNewPlace('e',8,new King(board, Color.BLACK));
-		placeNewPlace('e',1,new King(board, Color.WHITE));
-		
-		
+
+		placeNewPlace('c', 2, new Rook(board, Color.WHITE));
+		placeNewPlace('d', 2, new Rook(board, Color.WHITE));
+		placeNewPlace('e', 2, new Rook(board, Color.WHITE));
+		placeNewPlace('e', 1, new Rook(board, Color.WHITE));
+		placeNewPlace('d', 1, new King(board, Color.WHITE));
+
+		placeNewPlace('c', 7, new Rook(board, Color.BLACK));
+		placeNewPlace('c', 8, new Rook(board, Color.BLACK));
+        placeNewPlace('d', 7, new Rook(board, Color.BLACK));
+        placeNewPlace('e', 7, new Rook(board, Color.BLACK));
+        placeNewPlace('e', 8, new Rook(board, Color.BLACK));
+        placeNewPlace('d', 8, new King(board, Color.BLACK));
+        placeNewPlace('c', 1, new King(board, Color.BLACK));
+
 	}
 	
 
